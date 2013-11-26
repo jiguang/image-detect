@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="uft-8">
+    <title>图片边框检测接口演示</title>
+    <script type="text/javascript" src="jquery.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="form">
+        <input id="img_url" type="text" value="input image url" />
+        <button id="submit" type="submit">TEST</button>
+    </div>
+    <div class="result">
+        <p id="result">检测结果：上边框{{top}}，右边框{{right}}，下边框{{bottom}}，左边框{{left}}</p>
+        <p id="data">返回数据：{{data}}</p>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var api = 'http://localhost:3000/img?url=';
+        var url = encodeURIComponent($.trim($('#img_url').val()));
+
+        $('#submit').click(function(){
+
+            $.getJSON(api+url, function(data){
+
+                var $data = $('#data');
+                $data.html($data.html().replace('{{data}}', data));
+
+                var $result = $('#result');
+
+                $result.html($result.html()
+                        .replace('{{top}}', data.top)
+                        .replace('{{right}}', data.right)
+                        .replace('{{bottom}}', data.bottom)
+                        .replace('{{left}}', data.left));
+            });
+        });
+    });
+</script>
+</body>
+</html>

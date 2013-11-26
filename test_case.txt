@@ -1,0 +1,16 @@
+top
+http://img1.paipaiimg.com/boss-5279F8C1-E84DF6325279F8C10401000000A3407D.1.jpg
+
+right
+http://img3.paipaiimg.com/boss-514C275B-BFDD0900514C275B040100001D9B9C5B.1.jpg
+
+top and right
+http://img1.paipaiimg.com/boss-526BD081-DF86458E526BD081040100002969AF96.1.jpg
+
+
+can't detect
+http://img5.paipaiimg.com/boss-525E6ACD-96A99164525E6ACD04010000281FE731.1.jpg
+
+
+api test
+http://localhost:3000/img?url=http://img1.paipaiimg.com/boss-526BD081-DF86458E526BD081040100002969AF96.1.jpg
