@@ -1,14 +1,18 @@
 var phantom = require('phantom');
 var http = require('http');
 var url = require('url');
-var PORT = 3000;
 
 http.createServer(function (req, res) {
+
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('fuck');
 
     var query = url.parse(req.url, true).query;
     var img_url = decodeURIComponent(query.url);
 
     if(img_url != 'undefined' && img_url != ''){
+
+        console.log(img_url);
 
         // phantom node
         phantom.create(function(ph) {
@@ -45,6 +49,6 @@ http.createServer(function (req, res) {
     }
 
 
-}).listen(PORT, '127.0.0.1');
+}).listen(8080, '10.12.23.58');
 
-console.log('Server running at http://127.0.0.1:' + PORT + '/');
+console.log('Server running at http://127.0.0.1:8080');
